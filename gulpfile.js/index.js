@@ -22,5 +22,9 @@ json.displayName = 'json';
 exports.css = css;
 exports.html = html;
 exports.js = js;
-exports.watch = watchFiles;
+// exports.watch = watchFiles;
 exports.build = parallel(html, js, css, image, json);
+
+// Add image and json
+exports.image = image;
+exports.json = json;

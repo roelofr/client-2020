@@ -1,10 +1,10 @@
-const {src, dest} = require('gulp');
+const { src, dest } = require('gulp')
 
-const json = function (filesJSON) {
+const json = (files) => {
     return function () {
-        return src(filesJSON)
-            .pipe(dest('./dist'));
+        return src(files)
+            .pipe(dest('./dist/memes'))
     }
-};
+}
 
-exports.json = json;
+exports.json = json

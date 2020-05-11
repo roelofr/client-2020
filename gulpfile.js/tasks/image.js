@@ -1,6 +1,10 @@
-const {src, dest} = require('gulp');
+const { src, dest } = require('gulp')
 
-    //opdracht voor student
-};
+const image = (files) => {
+    return function () {
+        return src(files)
+            .pipe(dest('./dist/img'))
+    }
+}
 
-exports.image = image;
+exports.image = image
