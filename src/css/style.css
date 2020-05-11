@@ -1,3 +1,7 @@
+body, html {
+    width: 100vw;
+}
+
 #funboard ul{
         /*opdracht voor student*/
 }
@@ -10,30 +14,7 @@
     width: 60px;
 }
 
-img#mario {
-    width: 100px;
-    height: 100px;
-    position: fixed;
-    left: 30%;
-        /*opdracht voor student*/
-}
-
 .meme-pic{
     width: 100px;
     height: 100px;
-}
-
-@keyframes mario {
-    0% {
-        left: 30%;
-        top: 0%;
-    }
-
-        /*opdracht voor student*/
-
-    100% {
-        left: 30%;
-        top: 0%;
-    }
-
 }
