@@ -5,7 +5,7 @@ img#mario {
     left: calc(50% - 50px);
     /* @keyframes duration | timing-function | delay |
     iteration-count | direction | fill-mode | play-state | name */
-    animation: 1s ease-in-out infinite alternate mario-mobile;
+    animation: 5s ease-in-out infinite alternate mario-mobile;
 }
 
 @media (min-width: 600px) {

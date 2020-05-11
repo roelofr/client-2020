@@ -88,10 +88,50 @@
 
 
     describe('opdracht 4 modules, Promise en AJAX', () => {
+        // Init on load
+        $(SPA.init())
+
+        // Handle score
+        it ('verhoogt score bij klik op mario', function () {
+            const target = $('#mario').eq(0)
+            const getScore = () => parseInt($('#score').text(), 10)
+
+            // Requires DOM updates
+            return new Promise((resolve) => {
+                const currentScore = getScore()
+
+                // Click mario
+                target.click()
+
+                // Wait for DOM upate
+                setTimeout(() => {
+                    expect(getScore()).toBeGreaterThan(currentScore)
+                    resolve()
+                }, 150);
+            })
+        })
 
 
-    	//opdracht voor de student
+        // Count memes
+        it('voegt een meme toe bij klik op mario', function () {
+            const target = $('#mario').eq(0)
+            const memeContainer = $('#memes')
+            const getMemeCount = () => memeContainer.children().length
 
+            // Requires DOM updates
+            return new Promise((resolve) => {
+                const currentMemeCount = getMemeCount()
+
+                // Click mario
+                target.click()
+
+                // Wait for DOM upate
+                setTimeout(() => {
+                    expect(getMemeCount()).toBeGreaterThan(currentMemeCount)
+                    resolve()
+                }, 150);
+            })
+        })
 
     })
 
