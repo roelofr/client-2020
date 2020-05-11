@@ -37,8 +37,8 @@
                 const f = () => {
                     new Meme([])
                 };
-                
-                //opdracht voor de student
+
+                 expect(f).toThrowError("Invalid meme list provided");
             })
 
             it('de constructor gooit geen error indien memeList verstrekt is', () => {
@@ -46,19 +46,41 @@
                     new Meme([{}])
                 };
 
-               //opdracht voor de student
+                expect(f).not.toThrowError("Invalid meme list provided");
             })
 
             it('heeft een methode getNextMeme', () => {
                 const m = new Meme([{}]);
 
-                //opdracht voor de student 
+                // Expect methot to work
+                expect(m.getNextMeme).toBeDefined()
+                expect(m.getNextMeme()).toBeTruthy()
+
+                // Shoud loop back arod
+                const meme1 = m.getNextMeme()
+                const meme2 = m.getNextMeme()
+                expect(meme1).toEqual(meme2)
             })
 
             it('heeft een methode searchMeme', () => {
-                const m = new Meme([{}]);
+                const m = new Meme([
+                    {'name': 'Foo bar'},
+                    {'name': 'Bar BAz'},
+                    {'name': 'Baz Buzz'}
+                ]);
 
-                //opdracht voor de student
+                // Expect method to exist
+                expect(m.searchMeme).toBeDefined()
+
+                // Find stuff
+                expect(m.searchMeme('Foo')).toBeTruthy()
+                expect(m.searchMeme('Foo').length).toEqual(1)
+
+                // Case insensitive
+                expect(m.searchMeme('Bar').length).toEqual(2)
+
+                // Empty result
+                expect(m.searchMeme('Fuzz').length).toEqual(0)
             })
         })
 
