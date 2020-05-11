@@ -1,0 +1,65 @@
+img#mario {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: calc(50% - 50px);
+    /* @keyframes duration | timing-function | delay |
+    iteration-count | direction | fill-mode | play-state | name */
+    animation: 5s ease-in-out infinite alternate mario-mobile;
+}
+
+@media (min-width: 600px) {
+    #mario-container {
+        width: 700px;
+        height: 400px;
+    }
+    img#mario {
+        animation-name: mario;
+    }
+}
+
+@keyframes mario-mobile {
+    from {
+        /* padding */
+        top: 16px;
+    }
+    to {
+        /* height - image height - padding */
+        top: calc(100vh - 100px - 16px);
+    }
+}
+
+@keyframes mario {
+    0% {
+        left: 30%;
+        top: 0%;
+    }
+    50% {
+        top: 40%;
+    }
+    100% {
+        left: 70%;
+        top: 0%;
+    }
+}
+
+body, html {
+    width: 100vw;
+}
+
+#funboard ul{
+        /*opdracht voor student*/
+}
+
+#score {
+    font-size: 40px;
+    font-weight: bold;
+    vertical-align: middle;
+    height: 60px;
+    width: 60px;
+}
+
+.meme-pic{
+    width: 100px;
+    height: 100px;
+}
