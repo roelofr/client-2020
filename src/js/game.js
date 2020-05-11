@@ -14,7 +14,7 @@ const SPA = (function ($) {
 
         const getMemes = function () {
             // THIS DOES NOT WORK ON LOCALHOST >:( !!!!
-            return $.ajax('meme/memes-list.json')
+            return $.ajax('memes/meme-list.json')
                 .then(data => {
                     if (data.success && data.data && data.data.memes) {
                         return data.data.memes
